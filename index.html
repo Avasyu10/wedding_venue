@@ -9,10 +9,10 @@
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #ffe8f0, #fff4fa);
       margin: 0;
-      padding: 40px 10px;
+      padding: 0; /* remove extra top padding */
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* start content from absolute top */
       min-height: 100vh;
     }
 
@@ -73,10 +73,35 @@
     }
       /* Responsive tweaks */
     @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-        border-radius: 18px;
+      body {
+        padding: 0; /* ensure no padding on mobile */
       }
+
+      .container {
+        margin-top: 0; /* remove any vertical offset */
+        padding: 18px;
+        border-radius: 16px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        margin-top: 0; /* ensure heading is at the very top */
+        padding-top: 5px; /* slight breathing room */
+      }
+
+      .info {
+        font-size: 1rem;
+      }
+
+      .info b {
+        font-size: 1.05rem;
+      }
+
+      .map-wrapper {
+        padding: 6px;
+        border-radius: 14px;
+      }
+    }
 
       h1 {
         font-size: 1.8rem;
